@@ -1,0 +1,346 @@
+<div class="breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-sm-4">
+        <h1>
+          <%#= @page.page_name %>!!!
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+<!--breadcrumbs end-->
+
+<!--container start-->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-5">
+      <div class="about-carousel wow fadeInLeft">
+        <div id="myCarousel" class="carousel slide">
+          <!-- Carousel items -->
+          <div class="carousel-inner">
+            <div class="active item">
+              <img src="<%#= @restaurant_1.image_url(:search_page) %>" alt="">
+              <div class="carousel-caption">
+                <p>
+                  Destictive Quality
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <img src="<%#= @restaurant_2.image_url(:search_page) %>" alt="">
+              <div class="carousel-caption">
+                <p>
+                  Forever Delicious
+                </p>
+              </div>
+            </div>
+            <div class="item">
+              <img src="<%#= @restaurant_3.image_url(:search_page) %>" alt="">
+              <div class="carousel-caption">
+                <p>
+                  Always Appetizing
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Carousel nav -->
+          <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+            <i class="fa fa-angle-left">
+            </i>
+          </a>
+          <a class="carousel-control right" href="#myCarousel" data-slide="next">
+            <i class="fa fa-angle-right">
+            </i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-7 about wow fadeInRight">
+      <%#= @page.text_1 %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="hiring">
+      <h2 class="wow flipInX">
+        <%#= @page.string_1 %>
+      </h2>
+      <div class="col-lg-6 col-sm-6 about-hiring">
+        <div class="icon-wrap ico-bg round-five wow zoomIn" data-wow-duration="1s" data-wow-delay=".1s">
+          <i class="fa fa-user">
+          </i>
+        </div>
+        <div class="content">
+          <h3 class="title wow flipInX">
+            <%#= @page.string_2 %>
+          </h3>
+          <p>
+            <%#= @page.string_3 %>
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-6 col-sm-6 about-hiring">
+        <div class="icon-wrap ico-bg round-five wow zoomIn" data-wow-duration="1s" data-wow-delay=".3s">
+          <i class="fa fa-user">
+          </i>
+        </div>
+        <div class="content">
+          <h3 class="title wow flipInX">
+            <%#= @page.string_4 %>
+          </h3>
+          <p>
+           <%#= @page.string_5 %>
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-6 col-sm-6 about-hiring">
+        <div class="icon-wrap ico-bg round-five wow zoomIn" data-wow-duration="1s" data-wow-delay=".5s">
+          <i class="fa fa-user">
+          </i>
+        </div>
+        <div class="content">
+          <h3 class="title wow flipInX">
+            <%#= @page.string_6 %>
+          </h3>
+          <p>
+            <%#= @page.string_7 %>
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-6 col-sm-6 about-hiring">
+        <div class="icon-wrap ico-bg round-five wow zoomIn" data-wow-duration="1s" data-wow-delay=".7s">
+          <i class="fa fa-user">
+          </i>
+        </div>
+        <div class="content">
+          <h3 class="title wow flipInX">
+            <%#= @page.string_8 %>
+          </h3>
+          <p>
+           <%#= @page.string_9 %>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="gray-box">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5">
+
+      </div>
+      <div class="col-lg-7" id="skillz">
+        <h3 class="skills">
+          <%#= @page.string_10 %>
+        </h3>
+
+        <div class="skill_bar">
+          <div class="skill_bar_progress skill_one">
+            <p>
+              <%#= @page.string_11 %>
+            </p>
+          </div>
+        </div>
+
+        <div class="skill_bar">
+          <div class="skill_bar_progress skill_two">
+            <p>
+              <%#= @page.string_12 %>
+            </p>
+          </div>
+        </div>
+
+        <div class="skill_bar">
+          <div class="skill_bar_progress skill_three">
+            <p>
+              <%#= @page.string_13 %>
+            </p>
+          </div>
+        </div>
+
+        <div class="skill_bar">
+          <div class="skill_bar_progress skill_four">
+            <p>
+              <%#= @page.string_14 %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="container" id="tourpackages-carousel">
+
+  <div class="row">
+    <div class="profile">
+      <h2>
+        <%#= @page.string_15 %>
+      </h2>
+      <div class="col-xs-12 col-sm-6 col-md-3">
+          <%#= image_tag @page.image_1_url(:pages) if @page.image_2_url(:pages).present? %>
+          <div class="caption">
+            <h4>
+              <%#= @page.text_2 %>
+            </h4>
+            <p>
+             <%#= @page.text_3 %>
+            </p>
+            <div class="team-social-link">
+              <a href="#">
+                <i class="fa fa-facebook">
+                </i>
+              </a>
+              <a href="#">
+                <i class="fa fa-twitter">
+                </i>
+              </a>
+              <a href="#">
+                <i class="fa fa-pinterest">
+                </i>
+              </a>
+              <a href="#">
+                <i class="fa fa-linkedin">
+                </i>
+              </a>
+              <a href="#">
+                <i class="fa fa-google-plus">
+                </i>
+              </a>
+              <a href="#">
+                <i class="fa fa-github">
+                </i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-3">
+          <%#= image_tag @page.image_2_url(:pages) if @page.image_2_url(:pages).present? %>
+          <div class="caption">
+            <h4>
+              <%#= @page.text_4 %>
+            </h4>
+            <p>
+              <%#= @page.text_5 %>
+            </p>
+            <div class="team-social-link">
+              <a href="#">
+                <i class="fa fa-facebook">
+                </i>
+              </a>
+              <a href="#">
+                <i class="fa fa-twitter">
+                </i>
+              </a>
+              <a href="#">
+                <i class="fa fa-pinterest">
+                </i>
+              </a>
+              <a href="#">
+                <i class="fa fa-linkedin">
+                </i>
+              </a>
+              <a href="#">
+                <i class="fa fa-google-plus">
+                </i>
+              </a>
+              <a href="#">
+                <i class="fa fa-github">
+                </i>
+              </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-3">
+          <%#= image_tag @page.image_3_url(:pages) if @page.image_2_url(:pages).present? %>
+          <div class="caption">
+            <h4>
+              <%#= @page.text_6 %>
+            </h4>
+            <p>
+              <%#= @page.text_7 %>
+            </p>
+            <div class="team-social-link">
+              <a href="#">
+                <i class="fa fa-facebook">
+                </i>
+              </a>
+              <a href="#">
+                <i class="fa fa-twitter">
+                </i>
+              </a>
+              <a href="#">
+                <i class="fa fa-pinterest">
+                </i>
+              </a>
+              <a href="#">
+                <i class="fa fa-linkedin">
+                </i>
+              </a>
+              <a href="#">
+                <i class="fa fa-google-plus">
+                </i>
+              </a>
+              <a href="#">
+                <i class="fa fa-github">
+                </i>
+              </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <%#= image_tag @page.image_4_url(:pages) if @page.image_2_url(:pages).present? %>
+          <div class="caption">
+            <h4>
+              <%#= @page.text_8 %>
+            </h4>
+            <p>
+              <%#= @page.text_9 %>
+            </p>
+            <div class="team-social-link">
+              <a href="#">
+                <i class="fa fa-facebook">
+                </i>
+              </a>
+              <a href="#">
+                <i class="fa fa-twitter">
+                </i>
+              </a>
+              <a href="#">
+                <i class="fa fa-pinterest">
+                </i>
+              </a>
+              <a href="#">
+                <i class="fa fa-linkedin">
+                </i>
+              </a>
+              <a href="#">
+                <i class="fa fa-google-plus">
+                </i>
+              </a>
+              <a href="#">
+                <i class="fa fa-github">
+                </i>
+              </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- End row -->
+
+  </div>
+  <!-- End container -->
+</div>
+
+
+<%= render "pages/about_script" %>

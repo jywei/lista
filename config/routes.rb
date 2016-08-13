@@ -5,6 +5,14 @@ Rails.application.routes.draw do
 
   get 'reviews/create'
 
+  resources 'pages'
+
+  resources 'restaurants'
+
+  get 'pages/about' => 'pages#about'
+
+  get 'pages/contact' => 'pages#contact'
+
   root to: 'restaurants#index'
 
   devise_for :users

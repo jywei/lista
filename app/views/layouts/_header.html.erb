@@ -13,10 +13,10 @@
       <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="dropdown">
-              <%#= link_to pages_path, data: { close_others: false, delay: 0,
+              <%= link_to pages_path, data: { close_others: false, delay: 0,
                 hover: "dropdown"} do %>
                 <i class="fa fa-home"></i> Home
-              <%# end %>
+              <% end %>
             </li>
 
             <li class="dropdown">
@@ -27,17 +27,17 @@
             </li>
 
             <li class="dropdown">
-              <%#= link_to pages_about_path, data: { close_others: false, delay: 0,
+              <%= link_to pages_about_path, data: { close_others: false, delay: 0,
                 hover: "dropdown"} do %>
                 <i class="fa fa-info-circle"></i> About Us
-              <%# end %>
+              <% end %>
             </li>
 
             <li>
-              <%#= link_to pages_contact_path, data: { close_others: false, delay: 0,
+              <%= link_to pages_contact_path, data: { close_others: false, delay: 0,
                 hover: "dropdown"} do %>
                 <i class="fa fa-envelope"></i> Contact Us
-              <%# end %>
+              <% end %>
             </li>
             <% if current_user %>
             <li>
