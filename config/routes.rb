@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'reviews/index'
+
+  get 'reviews/new'
+
+  get 'reviews/create'
+
   root to: 'pages#index'
 
   devise_for :users
