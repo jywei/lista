@@ -9,9 +9,9 @@ Rails.application.routes.draw do
 
   resources 'restaurants'
 
-  get 'pages/about' => 'pages#about'
+  get 'about' => 'pages#about'
 
-  get 'pages/contact' => 'pages#contact'
+  get 'contact' => 'pages#contact'
 
   root to: 'restaurants#index'
 
