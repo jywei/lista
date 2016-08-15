@@ -9,11 +9,13 @@
   </head>
 
   <body>
-    <%= render "layouts/header" %>
-    <%= bootstrap_flash %>
-
+  <%= render "layouts/header" %>
+  <%= bootstrap_flash %>
+  <div class="container-fluid">
     <%= yield %>
-    <%= render "layouts/footer" %>
-    <%#= render "layouts/script" %>
+  </div>
+  <%= render "layouts/footer" %>
+  <%= render "layouts/script" %>
+
   </body>
 </html>
