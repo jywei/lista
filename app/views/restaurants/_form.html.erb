@@ -5,7 +5,7 @@
       <%= form.input :name, label: false, placeholder: "Enter The Restaurant Name" %>
     </div>
     <div class="col-xs-4">
-      <%#= form.select :category_id, Category.all.map{ |form| [form.name, form.id]} %>
+      <%= form.select :category_id, Category.all.map{ |form| [form.name, form.id]} %>
     </div>
   </div>
   <!--new row-->
