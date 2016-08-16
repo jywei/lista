@@ -1,4 +1,199 @@
-<p id="notice"><%= notice %></p>
+<div class="breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-sm-4">
+        <h1>
+          <%= @restaurant.name %>
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="pf-img text-center">
+        <%# if @restaurant.image_url.present? %>
+        <%#= image_tag @restaurant.image_url(:restaurant_show) %>
+        <%# else %>
+        <%#= image_tag "restaurant_show_dummy.JPG" %>
+        <%# end %>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-md-push-3">
+        <div class="row">
+          <div class="col-md-12 single-post">
+            <div id="myTabContent" class="tab-content">
+              <div class="tab-pane fade in active" id="detail">
+                <div class="row">
+                  <div class="col-md-12">
+                    <% if @reviews.blank? %>
+                      <p>This establishment has no reviews.  Be the first to share your dining experience!</p>
+                    <% else %>
+                      <p><%= @restaurant.name %> has an average rating of
+                      (<%= @average_rating %>) stars</p>
+                      <span class="star-rating" data-score=<%= @average_rating %>></span>
+                      <p>and has been reviewed by</p>
+                      <%= @reviews.count %>
+                      <%= "client".pluralize@reviews.count %>
+                    <% end %>
+                    <h3 class="text-muted">
+                      Restaurant Overview
+                    </h3>
+                    <%= link_to "Edit", edit_restaurant_path,
+                    class: "btn btn-warning btn-xs" %> <!-- if current_user.try(:admin?) -->
+                    <%= link_to "Delete", restaurant_path,
+                    method: :delete,
+                    data: { confirm: "Are You Really Sure?" },
+                    class: "btn btn-danger btn-xs" %> <!-- if current_user.try(:admin?) -->
+                    <table class="table table-bordered">
+                      <tr>
+                        <td>
+                          <strong>Restaurant Name</strong>
+                        </td>
+                        <td>
+                          <%= @restaurant.name %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <strong>Website</strong>
+                        </td>
+                        <td>
+                          <%= @restaurant.email %>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <strong>Address</strong>
+                        </td>
+                        <td>
+                          <%= @restaurant.address1 %>
+                          <span><%= @restaurant.address2 %></span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <strong>
+                            City | State/Provence |
+                            <br />
+                            Postal Code
+                          </strong>
+                        </td>
+                        <td>
+                          <%= @restaurant.city.titleize %> |
+                          <span>
+                            <%= @restaurant.state_provence.upcase %> |
+                          </span>
+                          <span>
+                            <%= @restaurant.postalcode %>
+                          </span>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <strong>Telephone</strong>
+                        </td>
+                        <td>
+                          <%= @restaurant.phone %>
+                        </td>
+                      </tr>
+                    </table>
+                    <div class="row">
+                    </div>
+                    <h3>More About <%= @restaurant.name %></h3>
+                    <p><%= @restaurant.description %></p>
+                  </div>
+                </div>
+                <!--google map start-->
+                <div class="contact-map">
+                  <div id="map-canvas" style="width: 100%; height: 400px">
+                  </div>
+                </div>
+                <!--google map end-->
+                <!-- break -->
+                <div class="tab-pane fade" id="location">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div id="map-property">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end:article -->
+        <!-- begin:sidebar -->
+        <div class="col-md-3 col-md-pull-9 sidebar">
+          <div class="widget widget-sidebar widget-white">
+            <div class="widget-header">
+              <h3>Restaurant Reviews</h3>
+            </div>
+            <!-- break -->
+            <div class="widget widget-sidebar widget-white">
+              <%# @reviews.each do |review| %>
+              <span class="star-rating" data-score=<%#= review.rating %>></span><br />
+              <%#= review.comment %>
+              <blockquote class="blockquote">
+                <footer class="blockquote-footer pull-right">
+                  <cite><%#= review.user.username %></cite>
+                </footer>
+              </blockquote>
+              <hr>
+              <%# end %>
+            </div>
+            <%#= link_to "Create Review",
+                        new_restaurant_review_path(@restaurant),
+                        class: "btn btn-info" %>
+                        <!-- end:sidebar -->
+          </div>
+        </div>
+        <!-- break -->
+      </div>
+      <!-- end:agent -->
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&AMP;sensor=false">
+</script> -->
+
+<script>
+  $(document).ready(function() {
+    //Set the carousel options
+    $('#quote-carousel').carousel({
+      pause: true,
+      interval: 4000,
+    }
+    );
+  }
+  );
+  //google map
+  // function initialize() {
+  //   var myLatlng = new google.maps.LatLng(<%#= @restaurant.latitude %>,<%#= @restaurant.longitude %>);
+  //   var mapOptions = {
+  //     zoom: 10,
+  //     center: myLatlng,
+  //     mapTypeId: google.maps.MapTypeId.ROADMAP
+  //   }
+  //       var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+  //   var marker = new google.maps.Marker({
+  //     position: myLatlng,
+  //     map: map,
+  //     title: 'Contact'
+  //   }
+  //                                      );
+  // }
+  // google.maps.event.addDomListener(window, 'load', initialize);
+</script>
