@@ -25,15 +25,12 @@ class RestaurantsController < ApplicationController
   # POST /restaurants.json
   def create
     @restaurant = Restaurant.new(restaurant_params)
-
-    respond_to do |format|
-      if @restaurant.save
-        format.html { redirect_to @restaurant, notice: 'Restaurant was successfully created.' }
-        format.json { render :show, status: :created, location: @restaurant }
-      else
-        format.html { render :new }
-        format.json { render json: @restaurant.errors, status: :unprocessable_entity }
-      end
+    if @restaurant.save
+      redirect_to @restaurant
+      flash[:success] = "Great News! #{@user.username} your review has been saved."
+    else
+      flash[:error] = "Sorry #{@user.username}, see the errors below and re submit"
+      render :new
     end
   end
 
@@ -69,6 +66,7 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.fetch(:restaurant, {})
+      params.require(:restaurant).permit(:name, :description, :address1, :address2,
+      :city, :state_provence, :postalcode, :phone, :email)
     end
 end
