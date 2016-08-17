@@ -1,6 +1,7 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
   before_action :set_user, only: [:index, :create, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create]
 
   # GET /restaurants
   # GET /restaurants.json
@@ -30,7 +31,7 @@ class RestaurantsController < ApplicationController
       redirect_to @restaurant
       flash[:success] = "Great News! #{@user.username} your review has been saved."
     else
-      flash[:error] = "Sorry #{@user.username}, see the errors below and re submit"
+      flash[:error] = "Sorry #{@user.username}, see the errors below and resubmit"
       render :new
     end
   end
