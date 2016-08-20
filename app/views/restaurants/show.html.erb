@@ -16,7 +16,7 @@
         <%# if @restaurant.image_url.present? %>
         <%#= image_tag @restaurant.image_url(:restaurant_show) %>
         <%# else %>
-        <%#= image_tag "restaurant_show_dummy.JPG" %>
+        <%= image_tag "restaurant_show_dummy.JPG" %>
         <%# end %>
       </div>
     </div>
@@ -33,24 +33,24 @@
                 <div class="row">
                   <div class="col-md-12">
                     <% if @reviews.blank? %>
-                      <p>This establishment has no reviews.  Be the first to share your dining experience!</p>
+                      <p>This establishment has no reviews. Be the first to share your dining experience!</p>
                     <% else %>
                       <p><%= @restaurant.name %> has an average rating of
                       (<%= @average_rating %>) stars</p>
                       <span class="star-rating" data-score=<%= @average_rating %>></span>
                       <p>and has been reviewed by</p>
                       <%= @reviews.count %>
-                      <%= "client".pluralize@reviews.count %>
+                      <%= "client".pluralize @reviews.count %>
                     <% end %>
                     <h3 class="text-muted">
                       Restaurant Overview
                     </h3>
                     <%= link_to "Edit", edit_restaurant_path,
-                    class: "btn btn-warning btn-xs" %> <!-- if current_user.try(:admin?) -->
+                                        class: "btn btn-warning btn-xs" %> <!-- if current_user.try(:admin?) -->
                     <%= link_to "Delete", restaurant_path,
-                    method: :delete,
-                    data: { confirm: "Are You Really Sure?" },
-                    class: "btn btn-danger btn-xs" %> <!-- if current_user.try(:admin?) -->
+                                          method: :delete,
+                                          data: { confirm: "Are You Really Sure?" },
+                                          class: "btn btn-danger btn-xs" %> <!-- if current_user.try(:admin?) -->
                     <table class="table table-bordered">
                       <tr>
                         <td>
@@ -116,15 +116,12 @@
                   </div>
                 </div>
                 <!--google map end-->
+                <!-- break -->
                 <div class="tab-pane fade" id="location">
                   <div class="row">
                     <div class="col-md-12">
                       <div id="map-property">
                       </div>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
                     </div>
                   </div>
                 </div>
@@ -133,26 +130,33 @@
           </div>
         </div>
         <!-- end:article -->
+        <!-- begin:sidebar -->
         <div class="col-md-3 col-md-pull-9 sidebar">
           <div class="widget widget-sidebar widget-white">
             <div class="widget-header">
-              <h3>Restaurant Reviews</h3>
+              <h3>
+                Restaurant Reviews
+              </h3>
             </div>
+            <!-- break -->
             <div class="widget widget-sidebar widget-white">
               <% @reviews.each do |review| %>
-              <span class="star-rating" data-score=<%= review.rating %>></span><br />
-              <%= review.comment %>
-              <blockquote class="blockquote">
-                <footer class="blockquote-footer pull-right">
-                  <cite><%= review.user.username %></cite>
-                </footer>
-              </blockquote>
-              <hr>
+                <span class="star-rating" data-score=<%= review.rating %>></span><br />
+                <%= review.comment %>
+                <blockquote class="blockquote">
+                  <p class="m-b-0">
+                  </p>
+                  <footer class="blockquote-footer pull-right">
+                    <cite>
+                      <%= review.user.username %>
+                    </cite>
+                  </footer>
+                </blockquote>
+                <hr>
               <% end %>
             </div>
-            <%= link_to "Create Review",
-                        new_restaurant_review_path(@restaurant),
-                        class: "btn btn-info" %>
+            <%= link_to "Create Review", new_restaurant_review_path(@restaurant),
+                                         class: "btn btn-info" %>
           </div>
         </div>
         <!-- break -->
