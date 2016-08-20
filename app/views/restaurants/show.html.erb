@@ -116,7 +116,6 @@
                   </div>
                 </div>
                 <!--google map end-->
-                <!-- break -->
                 <div class="tab-pane fade" id="location">
                   <div class="row">
                     <div class="col-md-12">
@@ -134,29 +133,26 @@
           </div>
         </div>
         <!-- end:article -->
-        <!-- begin:sidebar -->
         <div class="col-md-3 col-md-pull-9 sidebar">
           <div class="widget widget-sidebar widget-white">
             <div class="widget-header">
               <h3>Restaurant Reviews</h3>
             </div>
-            <!-- break -->
             <div class="widget widget-sidebar widget-white">
-              <%# @reviews.each do |review| %>
-              <span class="star-rating" data-score=<%#= review.rating %>></span><br />
-              <%#= review.comment %>
+              <% @reviews.each do |review| %>
+              <span class="star-rating" data-score=<%= review.rating %>></span><br />
+              <%= review.comment %>
               <blockquote class="blockquote">
                 <footer class="blockquote-footer pull-right">
-                  <cite><%#= review.user.username %></cite>
+                  <cite><%= review.user.username %></cite>
                 </footer>
               </blockquote>
               <hr>
-              <%# end %>
+              <% end %>
             </div>
-            <%#= link_to "Create Review",
+            <%= link_to "Create Review",
                         new_restaurant_review_path(@restaurant),
                         class: "btn btn-info" %>
-                        <!-- end:sidebar -->
           </div>
         </div>
         <!-- break -->
@@ -175,10 +171,8 @@
     $('#quote-carousel').carousel({
       pause: true,
       interval: 4000,
-    }
-    );
-  }
-  );
+    });
+  });
   //google map
   // function initialize() {
   //   var myLatlng = new google.maps.LatLng(<%#= @restaurant.latitude %>,<%#= @restaurant.longitude %>);

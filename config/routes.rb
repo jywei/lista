@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   resources 'pages'
 
-  resources 'restaurants'
+  resources 'restaurants' do
+    resources 'reviews', except: [:show, :index]
+  end
 
   get 'about' => 'pages#about'
 
