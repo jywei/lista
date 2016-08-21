@@ -6,8 +6,12 @@ class Restaurant < ApplicationRecord
   geocoded_by :full_address
   after_validation :geocode
 
+  # def full_address
+  #   [address1, address2, city, state_provence, postalcode].join(', ')
+  # end
+
   def full_address
-    [address1, address2, city, state_provence, postalcode].join(', ')
+    [city, state_provence].join(', ')
   end
 
   def self.search(params)

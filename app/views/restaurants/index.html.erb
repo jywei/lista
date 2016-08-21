@@ -16,3 +16,31 @@
     </div>
   </div>
 </div>
+
+<div class='container'>
+  <div class="row">
+    <div class="col-md-9">
+      <%#= render "restaurants/slider" %>
+    </div>
+    <div class="col-md-3">
+      <h3>Search Lister<br /><small> For The Best Places To Eat!</small></h3><hr>
+      <%#= form_tag search_restaurants_path, method: :get do |f| %>
+      <%= simple_form_for :search_restaurants, { url: search_restaurants_path, method: :get } do |f| %>
+        <div style="padding-bottom: 10px;">
+          <%#= text_field_tag :search, nil, placeholder: "What do you wanna eat?" %>
+          <%= f.input :search, as: :text, label: false, placeholder: "What do you wanna eat?" %>
+        </div>
+        <div style="padding-bottom: 10px;">
+          <%#= text_field_tag :location, nil, placeholder: "Which city?" %>
+          <%= f.input :location, as: :text, label: false, placeholder: "Which city?" %>
+        </div>
+        <%#= select_tag :category, options_for_select(Category.all.map{ |category| [category.name, category.id]}) %>
+        <%= f.input :category, collection: Category.all, label: false %>
+        <%#= submit_tag 'Search', class: "btn btn-info" %>
+        <%= f.button :submit, "Search", class: "btn btn-info" %>
+      <% end %>
+      <br>
+    </div>
+  </div>
+  <%#= render "restaurants/categories"%>
+</div>

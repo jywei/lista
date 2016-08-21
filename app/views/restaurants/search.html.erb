@@ -1,0 +1,34 @@
+<!--http://blackrockdigital.github.io/startbootstrap-3-col-portfolio/-->
+<div class="breadcrumbs">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-sm-4">
+        <h1><%#= render 'restaurants/search_text'%></h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @restaurants.each do |r| %>
+    <div class="col-md-3">
+      <a href="#">
+       <%# if r.image_url.present? %>
+         <%#= link_to (image_tag r.image_url(:search_page)), r %>
+       <%# else %>
+         <%= link_to (image_tag "search_page_dummy.JPG"), r %>
+       <%# end %>
+      </a>
+      <h3>
+        <%= link_to r.name, r  %>
+      </h3>
+      <ul style="list-style-type: none;">
+        <li><%= r.city.titleize %>, <%= r.state_provence.upcase %></li>
+        <li><%= r.email %></li>
+        <li><%= r.phone %></li>
+      </ul>
+    </div>
+    <% end %>
+  </div>
+</div> <!--container close-->
