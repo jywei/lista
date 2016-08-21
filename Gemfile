@@ -39,6 +39,7 @@ gem 'ffaker', '~> 2.2'
 
 gem 'tinymce-rails', '~> 4.3', '>= 4.3.12'
 
+gem 'bootstrap_form'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

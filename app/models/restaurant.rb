@@ -15,7 +15,7 @@ class Restaurant < ApplicationRecord
     [city, state_provence].join(', ')
   end
 
-  def self.search(params)
+  def self.query(params)
     restaurants = Restaurant.where(category_id: params[:category].to_i)
 
     restaurants = restaurants.where("name like ? or description like ?", "%#{params[:search]}%", "%#{params[:search]}%") if params[:search].present?
