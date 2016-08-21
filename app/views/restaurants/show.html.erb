@@ -184,9 +184,9 @@
   <!-- begin:blog -->
 </div>
 
-<!-- <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&AMP;sensor=false">
-</script>
--->
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB10NINcuOfIJcaEG442XQcDraRMgqqtm0&v=3.exp&AMP;sensor=false">
+</script> -->
+
 
 
 <script>
@@ -195,25 +195,35 @@
     $('#quote-carousel').carousel({
       pause: true,
       interval: 4000,
+    });
+  });
+
+  function initialize() {
+    var myLatlng = new google.maps.LatLng(<%= @restaurant.latitude %>,<%= @restaurant.longitude %>);
+    var mapOptions = {
+      zoom: 10,
+      center: myLatlng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    }
+    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    var marker = new google.maps.Marker({
+      position: myLatlng,
+      map: map,
+      title: 'Contact'
     }
     );
   }
-  );
-  //google map
-  // function initialize() {
-  //   var myLatlng = new google.maps.LatLng(<#%= @restaurant.latitude %>,<%#= @restaurant.longitude %>);
-  //   var mapOptions = {
-  //     zoom: 10,
-  //     center: myLatlng,
-  //     mapTypeId: google.maps.MapTypeId.ROADMAP
-  //   }
-  //   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-  //   var marker = new google.maps.Marker({
-  //     position: myLatlng,
-  //     map: map,
-  //     title: 'Contact'
-  //   }
-  //   );
-  // }
-  // google.maps.event.addDomListener(window, 'load', initialize);
+  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<script>
+  $(document).ready(function() {
+    $('.star-rating').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function() {
+        return $(this).attr('data-score');
+      }
+    });
+  })
 </script>
