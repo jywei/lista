@@ -41,6 +41,8 @@ gem 'tinymce-rails', '~> 4.3', '>= 4.3.12'
 
 gem 'bootstrap_form'
 
+gem 'figaro'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
