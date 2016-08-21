@@ -8,7 +8,7 @@ coffee = Category.where(name: "Coffee").first_or_create(name: "Coffee")
 require 'ffaker'
 add_name = %w(House Grill Diner Eatery Express Shack)
 
-500.times do
+5.times do
 restaurant = Restaurant.create(name: FFaker::CheesyLingo.title + (" ") + add_name[rand(add_name.length)],
                               city: FFaker::AddressUS.city,
                           address1: FFaker::AddressUS.street_address,
