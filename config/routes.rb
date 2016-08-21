@@ -9,6 +9,9 @@ Rails.application.routes.draw do
 
   resources 'restaurants' do
     resources 'reviews', except: [:show, :index]
+    collection do
+      get 'search'
+    end
   end
 
   get 'about' => 'pages#about'
