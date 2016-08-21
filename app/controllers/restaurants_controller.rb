@@ -8,6 +8,12 @@ class RestaurantsController < ApplicationController
   # GET /restaurants.json
   def index
     @restaurants = Restaurant.all
+    @fast_food_restaurants = Restaurant.where(category_id: 1)
+    @seafood_restaurants = Restaurant.where(category_id: 2)
+    @steak_house_restaurants = Restaurant.where(category_id: 3)
+    @chinese_restaurants = Restaurant.where(category_id: 4)
+    @family_restaurants = Restaurant.where(category_id: 5)
+    @coffee_restaurants = Restaurant.where(category_id: 6)
   end
 
   # GET /restaurants/1

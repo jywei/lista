@@ -5,8 +5,6 @@
         Welocme to Lister - The World's Finest Restaurants
       </h1>
     </div>
-
-
     <div class="feature-box">
       <div class="col-md-4 col-sm-4 text-center wow fadeInUp">
         <div class="feature-box-heading">
@@ -15,61 +13,53 @@
           </h4>
         </div>
         <% @fast_food_restaurants.limit(4).each do |restaurant| %>
-        <ul style="list-style: none;">
-         <li><%= link_to restaurant.name, restaurant %></li>
-       </ul>
-       <% end %>
-       <%= link_to "See All", search_restaurants_path(category: @fast_food_search.id),
-       class: "btn btn-info btn-xs" %>
-     </div>
-   </div>
-
-   <div class="feature-box">
-    <div class="col-md-4 col-sm-4 text-center wow fadeInUp">
-      <div class="feature-box-heading">
-        <h4>
-          <b>Steak</b>
-        </h4>
+          <ul style="list-style: none;">
+            <li><%= link_to restaurant.name, restaurant %></li>
+          </ul>
+        <% end %>
+        <%= link_to "See All", search_restaurant_restaurants_path(category: @fast_food_search.id), class: "btn btn-info btn-xs" %>
       </div>
-      <% @steak_house_restaurants.limit(4).each do |restaurant| %>
-      <ul style="list-style: none;">
-       <li><%= link_to restaurant.name, restaurant %></li>
-     </ul>
-     <% end %>
-     <%= link_to "See All", search_restaurants_path(category: @steak_house_search.id),
-     class: "btn btn-info btn-xs" %>
-   </div>
- </div>
-
- <div class="feature-box">
-  <div class="col-md-4 col-sm-4 text-center wow fadeInUp">
-    <div class="feature-box-heading">
-      <h4>
-        <b>Seafood</b>
-      </h4>
     </div>
-    <% @seafood_restaurants.limit(4).each do |restaurant| %>
-    <ul style="list-style: none;">
-     <li><%= link_to restaurant.name, restaurant %></li>
-   </ul>
-   <% end %>
-   <%= link_to "See All", search_restaurants_path(category: @seafood_search.id),
-   class: "btn btn-info btn-xs" %>
- </div>
-</div>
-</div>
+
+    <div class="feature-box">
+      <div class="col-md-4 col-sm-4 text-center wow fadeInUp">
+        <div class="feature-box-heading">
+          <h4>
+            <b>Steak</b>
+          </h4>
+        </div>
+        <% @steak_house_restaurants.limit(4).each do |restaurant| %>
+          <ul style="list-style: none;">
+            <li><%= link_to restaurant.name, restaurant %></li>
+          </ul>
+        <% end %>
+        <%= link_to "See All", search_restaurant_restaurants_path(category: @steak_house_search.id), class: "btn btn-info btn-xs" %>
+      </div>
+    </div>
+
+    <div class="feature-box">
+      <div class="col-md-4 col-sm-4 text-center wow fadeInUp">
+        <div class="feature-box-heading">
+          <h4>
+            <b>Seafood</b>
+          </h4>
+        </div>
+        <% @seafood_restaurants.limit(4).each do |restaurant| %>
+          <ul style="list-style: none;">
+            <li><%= link_to restaurant.name, restaurant %></li>
+          </ul>
+        <% end %>
+        <%= link_to "See All", search_restaurant_restaurants_path(category: @seafood_search.id), class: "btn btn-info btn-xs" %>
+      </div>
+    </div>
+  </div>
 </div>
 
 
 <div class="row mar-b-50">
   <div class="col-md-12">
     <div class="text-center feature-head wow fadeInDown">
-      <h1 class="">
-      </h1>
     </div>
-
-
-
     <div class="feature-box">
       <div class="col-md-4 col-sm-4 text-center wow fadeInUp">
         <div class="feature-box-heading">
@@ -78,46 +68,43 @@
           </h4>
         </div>
         <% @chinese_restaurants.limit(4).each do |restaurant| %>
-        <ul style="list-style: none;">
-         <li><%= link_to restaurant.name, restaurant %></li>
-       </ul>
-       <% end %>
-       <%= link_to "See All", search_restaurants_path(category: @chinese_search.id),
-       class: "btn btn-info btn-xs" %>
-     </div>
-   </div>
-
-   <div class="feature-box">
-    <div class="col-md-4 col-sm-4 text-center wow fadeInUp">
-      <div class="feature-box-heading">
-        <h4>
-          <b>Family</b>
-        </h4>
+          <ul style="list-style: none;">
+            <li><%= link_to restaurant.name, restaurant %></li>
+          </ul>
+        <% end %>
+        <%= link_to "See All", search_restaurant_restaurants_path(category: @chinese_search.id), class: "btn btn-info btn-xs" %>
       </div>
-      <% @family_restaurants.limit(4).each do |restaurant| %>
-      <ul style="list-style: none;">
-       <li><%= link_to restaurant.name, restaurant %></li>
-     </ul>
-     <% end %>
-     <%= link_to "See All", search_restaurants_path(category: @family_search.id),
-     class: "btn btn-info btn-xs" %>
-   </div>
- </div>
- <div class="feature-box">
-  <div class="col-md-4 col-sm-4 text-center wow fadeInUp">
-    <div class="feature-box-heading">
-      <h4>
-        <b>Coffee</b>
-      </h4>
     </div>
-    <% @coffee_restaurants.limit(4).each do |restaurant| %>
-    <ul style="list-style: none;">
-      <li><%= link_to restaurant.name, restaurant %></li>
-    </ul>
-    <% end %>
-    <%= link_to "See All", search_restaurants_path(category: @coffee_search.id),
-    class: "btn btn-info btn-xs" %>
+
+    <div class="feature-box">
+      <div class="col-md-4 col-sm-4 text-center wow fadeInUp">
+        <div class="feature-box-heading">
+          <h4>
+            <b>Family</b>
+          </h4>
+        </div>
+        <% @family_restaurants.limit(4).each do |restaurant| %>
+          <ul style="list-style: none;">
+            <li><%= link_to restaurant.name, restaurant %></li>
+          </ul>
+        <% end %>
+        <%= link_to "See All", search_restaurant_restaurants_path(category: @family_search.id), class: "btn btn-info btn-xs" %>
+      </div>
+    </div>
+    <div class="feature-box">
+      <div class="col-md-4 col-sm-4 text-center wow fadeInUp">
+        <div class="feature-box-heading">
+          <h4>
+            <b>Coffee</b>
+          </h4>
+        </div>
+        <% @coffee_restaurants.limit(4).each do |restaurant| %>
+        <ul style="list-style: none;">
+          <li><%= link_to restaurant.name, restaurant %></li>
+        </ul>
+        <% end %>
+        <%= link_to "See All", search_restaurant_restaurants_path(category: @coffee_search.id), class: "btn btn-info btn-xs" %>
+      </div>
+    </div>
   </div>
-</div>
-</div>
 </div>
