@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-4 col-sm-4">
         <h1>
-          Lister Restaurants
+          Lista Restaurants
         </h1>
       </div>
       <div class="col-lg-8 col-sm-8">
@@ -23,7 +23,7 @@
       <%= render "restaurants/slider" %>
     </div>
     <div class="col-md-3 form-group">
-      <h3>Search Lister<br /><small> For The Best Places To Eat!</small></h3><hr>
+      <h3>Search Lista<br /><small> For The Best Places To Eat!</small></h3><hr>
       <%= form_tag search_restaurant_restaurants_path, method: :get do |f| %>
       <div style="padding-bottom: 10px;">
         <%= text_field_tag :search, nil, placeholder: "What do you wanna eat?", class: "form-control" %>
