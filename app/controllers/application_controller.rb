@@ -30,5 +30,6 @@ class ApplicationController < ActionController::Base
                           :country)
     end
   end
+
 end
 
