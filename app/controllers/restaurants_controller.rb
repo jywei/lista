@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  before_action :admin?, only: [:edit, :update, :destroy,]
+  # before_action :admin?, only: [:edit, :update, :destroy]
   before_action :set_user, only: [:index, :create, :update, :destroy]
   before_action :set_the_id, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create]
@@ -106,24 +106,24 @@ class RestaurantsController < ApplicationController
   # PATCH/PUT /restaurants/1
   # PATCH/PUT /restaurants/1.json
   def update
-    respond_to do |format|
-      if @restaurant.update(restaurant_params)
-        format.html { redirect_to @restaurant, notice: 'Restaurant was successfully updated.' }
-        format.json { render :show, status: :ok, location: @restaurant }
-      else
-        format.html { render :edit }
-        format.json { render json: @restaurant.errors, status: :unprocessable_entity }
-      end
+    if @restaurant.update(restaurant_params)
+      flash[:success] = "Great News, #{@user.username}! The restaurant has been updated!"
+      redirect_to @restaurant
+    else
+      flash[:danger] = "Sorry, #{@user.username}. The restaurant edit has some issues."
+      render :edit
     end
   end
 
   # DELETE /restaurants/1
   # DELETE /restaurants/1.json
   def destroy
-    @restaurant.destroy
-    respond_to do |format|
-      format.html { redirect_to restaurants_url, notice: 'Restaurant was successfully destroyed.' }
-      format.json { head :no_content }
+    if @restaurant.destroy
+      flash[:success] = "Okay then #{@user.username}. You have deleted the restaurant."
+      redirect_to root_path
+    else
+      flash[:danger] = "Sorry #{@user.username}. There seems to be a problem with your delete request."
+      render @restaurant
     end
   end
 

@@ -34,7 +34,7 @@
                 <div class="row">
                   <div class="col-md-12">
                     <% if @reviews.blank? %>
-                      <p>This establishment has no reviews.  Be the first to share your dining experience!</p>
+                      <p>This establishment has no reviews. Be the first to share your dining experience!</p>
                     <% else %>
                       <p>
                         <%= @restaurant.name %> has an average rating of
@@ -48,14 +48,15 @@
                     <h3 class="text-muted">
                       Restaurant Overview
                     </h3>
+                    <hr>
 
                     <%= link_to "Edit", edit_restaurant_path,
-                    class: "btn btn-warning btn-xs" %> <!-- if current_user.try(:admin?) -->
+                    class: "btn btn-warning btn-sm" %> <!-- if current_user.try(:admin?) -->
                     <%= link_to "Delete", restaurant_path,
                     method: :delete,
                     data: {confirm: "Are You Really Sure?"},
-                    class: "btn btn-danger btn-xs" %>  <!-- if current_user.try(:admin?) -->
-                    <table class="table table-bordered">
+                    class: "btn btn-danger btn-sm" %>  <!-- if current_user.try(:admin?) -->
+                    <table class="table table-bordered" style="margin-top: 10px;">
                       <tr>
                         <td>
                           <strong>
