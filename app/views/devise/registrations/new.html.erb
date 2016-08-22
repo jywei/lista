@@ -40,10 +40,10 @@
           label: false, placeholder: "Username" %>
       <%= f.input :email, required: true,
           label: false, placeholder: "Email" %>
-      <%#= f.input :city, required: true,
+      <%= f.input :city, required: true,
           label: false, placeholder: "City" %>
-      <%#= f.input :state_provence, required: true,
-          label: false, placeholder: "State/Provence" %>
+      <%= f.input :country, required: true,
+          label: false, placeholder: "State/Provence/Country" %>
       <%= f.input :password, required: true,
           hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
           label: false, placeholder: "Choose a Password" %>

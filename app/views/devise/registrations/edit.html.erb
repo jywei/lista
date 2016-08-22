@@ -22,10 +22,10 @@
           label: false, placeholder: "Username" %>
       <%= f.input :email, required: true,
           label: false, placeholder: "Email" %>
-      <%#= f.input :city, required: true,
+      <%= f.input :city, required: true,
           label: false, placeholder: "City" %>
-      <%#= f.input :state_provence, required: true,
-          label: false, placeholder: "State/Provence" %>
+      <%= f.input :country, required: true,
+          label: false, placeholder: "State/Provence/Country" %>
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>

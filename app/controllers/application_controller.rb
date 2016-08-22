@@ -9,7 +9,11 @@ class ApplicationController < ActionController::Base
                           :password_confirmation,
                           :username,
                           :firstname,
-                          :lastname)
+                          :lastname,
+                          :latitude,
+                          :longitude,
+                          :city,
+                          :country)
     end
 
     devise_parameter_sanitizer.permit(:account_update) do |user_params|
@@ -19,7 +23,11 @@ class ApplicationController < ActionController::Base
                           :username,
                           :firstname,
                           :lastname,
-                          :current_password)
+                          :current_password,
+                          :latitude,
+                          :longitude,
+                          :city,
+                          :country)
     end
   end
 end
