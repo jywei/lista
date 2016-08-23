@@ -1,5 +1,5 @@
 class RestaurantsController < ApplicationController
-  # before_action :admin?, only: [:edit, :update, :destroy]
+  before_action :admin?, only: [:edit, :update, :destroy]
   before_action :set_user, only: [:index, :create, :update, :destroy]
   before_action :set_the_id, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create]
@@ -134,7 +134,7 @@ class RestaurantsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
   def admin?
-    if !current_user.try(:admin?)
+    unless current_user.try(:admin?)
       flash[:danger] = "You are not authourized to access this resource."
       redirect_to root_path
     end

@@ -51,11 +51,11 @@
                     <hr>
 
                     <%= link_to "Edit", edit_restaurant_path,
-                    class: "btn btn-warning btn-sm" %> <!-- if current_user.try(:admin?) -->
+                                        class: "btn btn-warning btn-sm" if current_user.try(:admin?) %>
                     <%= link_to "Delete", restaurant_path,
-                    method: :delete,
-                    data: {confirm: "Are You Really Sure?"},
-                    class: "btn btn-danger btn-sm" %>  <!-- if current_user.try(:admin?) -->
+                                          method: :delete,
+                                          data: {confirm: "Are You Really Sure?"},
+                                          class: "btn btn-danger btn-sm" if current_user.try(:admin?) %>
                     <table class="table table-bordered" style="margin-top: 10px;">
                       <tr>
                         <td>
