@@ -5,7 +5,7 @@ chinese = Category.where(name: "Chinese").first_or_create(name: "Chinese")
 family = Category.where(name: "Family").first_or_create(name: "Family")
 coffee = Category.where(name: "Coffee").first_or_create(name: "Coffee")
 
-User.create(username: "Admin", firstname: "Admin", lastname: "Master",
+User.create!(username: "Admin", firstname: "Admin", lastname: "Master",
             email: "admin@example.com", city: "NYC", country: "USA")
 
 require 'ffaker'
