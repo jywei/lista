@@ -8,7 +8,7 @@ class Restaurant < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   def full_address
-    [city, state_provence].join(', ')
+    [city, address1, address2, postalcode, state_provence].join(', ')
   end
 
   def self.query(params)

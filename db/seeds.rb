@@ -5,10 +5,13 @@ chinese = Category.where(name: "Chinese").first_or_create(name: "Chinese")
 family = Category.where(name: "Family").first_or_create(name: "Family")
 coffee = Category.where(name: "Coffee").first_or_create(name: "Coffee")
 
+User.create(username: "Admin", firstname: "Admin", lastname: "Master",
+            email: "admin@example.com", city: "NYC", country: "USA")
+
 require 'ffaker'
 add_name = %w(House Grill Diner Eatery Express Shack)
 
-5.times do
+10.times do
 restaurant = Restaurant.create(name: FFaker::CheesyLingo.title + (" ") + add_name[rand(add_name.length)],
                               city: FFaker::AddressUS.city,
                           address1: FFaker::AddressUS.street_address,
