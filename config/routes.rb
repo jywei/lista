@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get 'reviews/create'
 
-  resources 'pages'
+  # resources 'pages'
 
   resources 'restaurants' do
     resources 'reviews', except: [:show, :index]
@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   end
 
   get 'about' => 'pages#about'
-
   get 'contact' => 'pages#contact'
+  get 'pages/index' => 'pages#index'
 
   root to: 'restaurants#index'
 
