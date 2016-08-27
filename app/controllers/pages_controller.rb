@@ -56,17 +56,14 @@ class PagesController < ApplicationController
     end
   end
 
-
-
   private
 
-  def admin?
-    if !current_user.try(:admin?)
-      flash[:danger] = "You are not authourized to access this resource."
-      redirect_to root_path
+    def admin?
+      unless current_user.try(:admin?)
+        flash[:danger] = "You are not authourized to access this resource."
+        redirect_to root_path
+      end
     end
-  end
-
 
     # Use callbacks to share common setup or constraints between actions.
     def set_page

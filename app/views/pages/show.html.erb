@@ -1,7 +1,7 @@
-<%= link_to 'Edit', edit_page_path(@page), class: "btn btn-info" if current_user.try(:admin?) %>
-
+<div style="margin: 15px;" class="pull-right">
+  <%= link_to 'Edit This Page', edit_page_path(@page),
+                      class: "btn btn-info" if current_user.try(:admin?) %>
+</div>
 <%= render "index" if params[:id] == "1" %>
 <%= render "about" if params[:id] == "2" %>
 <%= render "contact" if params[:id] == "3" %>
-
-<%= link_to 'Edit', edit_page_path(@page), class: "btn btn-info" if current_user.try(:admin?) %>
