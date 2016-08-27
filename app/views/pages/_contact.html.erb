@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-4 col-sm-4">
         <h1>
-          <%#= @page.page_name %>
+          <%= @page.page_name %>
         </h1>
       </div>
     </div>
@@ -16,23 +16,27 @@
     <div class="col-lg-5 col-sm-5 address">
       <section class="contact-infos">
         <h4 class="title custom-font text-black">
-          <%#= @page.string_1 %>
+          <%= @page.string_1 %>
         </h4>
         <address>
-         <%#= @page.text_1 %>
+          <%= @page.text_1 %>
        </address>
      </section>
      <section class="contact-infos">
       <h4 class="title custom-font text-black">
-        <%#= @page.string_10 %>
+        <%= @page.string_10 %>
       </h4>
-      <%#= @page.text_2 %>
+      <address>
+        <%= @page.text_2 %>
+      </address>
     </section>
     <section class="contact-infos">
       <h4>
-        <%#= @page.string_2 %>
+        <%= @page.string_2 %>
       </h4>
-      <%#= @page.text_3 %>
+      <address>
+        <%= @page.text_3 %>
+      </address>
     </section>
   </div>
   <div class="col-lg-7 col-sm-7 address">
@@ -42,33 +46,23 @@
     <div class="contact-form">
       <form role="form">
         <div class="form-group">
-          <label for="name">
-            Name
-          </label>
+          <label for="name">Name</label>
           <input type="text" placeholder="" id="name" class="form-control">
         </div>
         <div class="form-group">
-          <label for="email">
-            Email
-          </label>
+          <label for="email">Email</label>
           <input type="text" placeholder="" id="email" class="form-control">
         </div>
         <div class="form-group">
-          <label for="phone">
-            Phone
-          </label>
+          <label for="phone">Phone</label>
           <input type="text" id="phone" class="form-control">
         </div>
         <div class="form-group">
-          <label for="phone">
-            Message
-          </label>
+          <label for="phone">Message</label>
           <textarea placeholder="" rows="5" class="form-control">
           </textarea>
         </div>
-        <button class="btn btn-info" type="submit">
-          Submit
-        </button>
+        <button class="btn btn-info" type="submit">Submit</button>
       </form>
     </div>
   </div>
@@ -85,7 +79,7 @@
   <div class="row">
     <div class='col-md-offset-2 col-md-8 text-center'>
       <h2>
-        <%#= @page.string_3 %>
+        <%= @page.string_3 %>
       </h2>
     </div>
   </div>
@@ -108,15 +102,15 @@
             <blockquote>
               <div class="row">
                 <div class="col-sm-3 text-center">
-                  <img class="img-circle" src="img/person_1.png" style="width: 100px;height:100px;" alt="">
+                  <img class="img-circle" src="/assets/person_1.png" style="width: 100px;height:100px;" alt="">
                   <%#= image_tag @page.image_1_url(:small) %>
                 </div>
                 <div class="col-sm-9">
                   <p>
-                    <%#= @page.string_4 %>
+                    <%= @page.string_4 %>
                   </p>
                   <small>
-                    <%#= @page.string_5 %>
+                    <%= @page.string_5 %>
                   </small>
                 </div>
               </div>
@@ -127,43 +121,43 @@
             <blockquote>
               <div class="row">
                 <div class="col-sm-3 text-center">
-                  <img class="img-circle" src="img/person_2.png" style="width: 100px;height:100px;" alt="">
+                  <img class="img-circle" src="/assets/person_2.png" style="width: 100px;height:100px;" alt="">
                   <%#= @page.image_2 %>
                 </div>
                 <div class="col-sm-9">
                   <p>
-                   <%#= @page.string_6 %>
-                 </p>
-                 <small>
-                  <%#= @page.string_7 %>
-                </small>
+                    <%= @page.string_6 %>
+                  </p>
+                  <small>
+                    <%= @page.string_7 %>
+                  </small>
+                </div>
               </div>
-            </div>
-          </blockquote>
-        </div>
+            </blockquote>
+          </div>
         <!-- Quote 3 -->
-        <div class="item">
-          <blockquote>
-            <div class="row">
-              <div class="col-sm-3 text-center">
-                <img class="img-circle" src="img/person_3.png" style="width: 100px;height:100px;" alt="">
-                <%#= @page.image_3 %>
+          <div class="item">
+            <blockquote>
+              <div class="row">
+                <div class="col-sm-3 text-center">
+                  <img class="img-circle" src="/assets/person_3.png" style="width: 100px;height:100px;" alt="">
+                  <%= @page.image_3 %>
+                </div>
+                <div class="col-sm-9">
+                  <p>
+                    <%= @page.string_8 %>
+                  </p>
+                  <small>
+                    <%= @page.string_9 %>
+                  </small>
+                </div>
               </div>
-              <div class="col-sm-9">
-                <p>
-                  <%#= @page.string_8 %>
-                </p>
-                <small>
-                  <%#= @page.string_9 %>
-                </small>
-              </div>
-            </div>
-          </blockquote>
+            </blockquote>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </div>
 
 
