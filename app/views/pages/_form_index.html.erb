@@ -18,7 +18,7 @@
     <%= f.input :string_3, label: false %>
 
     <h3>Image One Text</h3>
-    <%= f.input :string_4, label: false %>
+    <%= f.text_area :text_2, label: false, class: "tinymce" %>
 
     <h3>Image One Image</h3>
     <%= f.input :image_1, as: :file, label: false %>
@@ -27,7 +27,7 @@
     <%= f.input :string_5, label: false %>
 
     <h3>Image Two Text</h3>
-    <%= f.input :string_6, label: false %>
+    <%= f.text_area :text_3, label: false, class: "tinymce" %>
 
     <h3>Image Two Image</h3>
     <%= f.input :image_2, as: :file, label: false %>
@@ -36,7 +36,7 @@
     <%= f.input :string_7, label: false %>
 
     <h3>Image Three Text</h3>
-    <%= f.input :string_8, label: false %>
+    <%= f.text_area :text_4, label: false, class: "tinymce" %>
 
     <h3>Image Three Image</h3>
     <%= f.input :image_3, as: :file, label: false %>
@@ -45,12 +45,10 @@
     <%= f.input :string_9, label: false %>
 
     <h3>Image Four Text</h3>
-    <%= f.input :string_10, label: false %>
+    <%= f.text_area :text_5, label: false, class: "tinymce" %>
 
     <h3>Image Four Image</h3>
     <%= f.input :image_4, as: :file, label: false %>
-
-
 
     <%= f.button :submit %>
 

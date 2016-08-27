@@ -29,26 +29,19 @@
       var imagePos = $(this).offset().top;
       var viewportheight = window.innerHeight;
       var topOfWindow = $(window).scrollTop();
-      if (imagePos < topOfWindow+viewportheight) {
+      if (imagePos < topOfWindow + viewportheight) {
         $('.skill_bar').fadeIn('slow');
         $('.skill_one').animate({
-          width:'<%= @page.integer_1 %>%'}
-                                , 2500);
+          width:'<%= @page.integer_1 %>%'}, 2500);
         $('.skill_two').animate({
-          width:'<%= @page.integer_2 %>%'}
-                                , 3500);
+          width:'<%= @page.integer_2 %>%'}, 3500);
         $('.skill_three').animate({
-          width:'<%= @page.integer_3 %>%'}
-                                  , 4000);
+          width:'<%= @page.integer_3 %>%'}, 4000);
         $('.skill_four').animate({
-          width:'<%= @page.integer_4 %>%'} 
-                                 , 2800);
+          width:'<%= @page.integer_4 %>%'}, 2800);
         $('.skill_bar_progress p').fadeIn('slow',function(){
-        }
-                                         );
+        });
       }
-    }
-                     );
-  }
-                  );
+    });
+  });
 </script>

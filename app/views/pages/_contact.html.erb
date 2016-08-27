@@ -19,7 +19,7 @@
           <%= @page.string_1 %>
         </h4>
         <address>
-          <%= @page.text_1 %>
+          <%= @page.text_1.html_safe %>
        </address>
      </section>
      <section class="contact-infos">
@@ -27,7 +27,7 @@
         <%= @page.string_10 %>
       </h4>
       <address>
-        <%= @page.text_2 %>
+        <%= @page.text_2.html_safe %>
       </address>
     </section>
     <section class="contact-infos">
@@ -35,7 +35,7 @@
         <%= @page.string_2 %>
       </h4>
       <address>
-        <%= @page.text_3 %>
+        <%= @page.text_3.html_safe %>
       </address>
     </section>
   </div>
